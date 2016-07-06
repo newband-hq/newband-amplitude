@@ -13,7 +13,8 @@ interface AmplitudeClientInterface
 {
     /**
      * @param \Newband\Amplitude\Message\Message $message
-     * @return mixed
+     * @return \Guzzle\Http\Message\Response
+     * @throws \Guzzle\Http\Exception\ResponseException
      */
     public function send(Message $message);
 
