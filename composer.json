@@ -1,0 +1,29 @@
+{
+  "name":"newband/amplitude-bundle",
+  "version":"1.0.0",
+  "description":"Amplitude SDK for PHP",
+  "keywords":[
+    "amplitude"
+  ],
+  "type":"library",
+  "license":"Apache-2.0",
+  "authors":[
+    {
+      "name":"Zafar <zafar@newband.com>",
+      "homepage":"http://newband.com"
+    }
+  ],
+  "require":{
+    "php": ">=5.3.3",
+    "guzzle/guzzle":"~3.9",
+    "symfony/symfony": "~2.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Newband\\Amplitude\\": "/src/Newband/Amplitude"
+    },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  }
+}
