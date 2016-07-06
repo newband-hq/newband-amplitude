@@ -2,7 +2,6 @@
 
 namespace Amplitude\Symfony\DependencyInjection;
 
-
 use Newband\Amplitude\DependencyInjection\Configuration;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
