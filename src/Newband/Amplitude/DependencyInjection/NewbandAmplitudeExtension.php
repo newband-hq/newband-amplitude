@@ -8,11 +8,11 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
- * Class AmplitudeExtension
+ * Class NewbandAmplitudeExtension
  * @package Amplitude\Symfony\DependencyInjection
  * @author Zafar <zafar@newband.com>
  */
-class AmplitudeExtension extends Extension
+class NewbandAmplitudeExtension extends Extension
 {
     /**
      * {@inheritdoc}
