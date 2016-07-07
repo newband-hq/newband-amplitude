@@ -2,7 +2,7 @@
 
 namespace Newband\Amplitude\Client;
 
-use Guzzle\Http\Client;
+use GuzzleHttp\Client;
 use Newband\Amplitude\Message\Message;
 
 /**
@@ -23,7 +23,7 @@ abstract class AmplitudeClient implements AmplitudeClientInterface
     protected $url;
 
     /**
-     * @var null|\Guzzle\Http\Client
+     * @var null|\GuzzleHttp\Client
      */
     protected $client = null;
 
@@ -71,12 +71,12 @@ abstract class AmplitudeClient implements AmplitudeClientInterface
     }
 
     /**
-     * @return \Guzzle\Http\Client|null
+     * @return \GuzzleHttp\Client|null
      */
     protected function getClient()
     {
         if (null === $this->client) {
-            $this->client = new Client($this->url);
+            $this->client = new Client();
         }
 
         return $this->client;
@@ -87,7 +87,8 @@ abstract class AmplitudeClient implements AmplitudeClientInterface
      */
     public function send(Message $message)
     {
-        $request = $this->getClient()->post(null, null, $this->getPostBody($message));
-        return $request->send();
+        return $this->getClient()->request('POST', $this->url, array(
+            'form_params' => $this->getPostBody($message)
+        ));
     }
 }
