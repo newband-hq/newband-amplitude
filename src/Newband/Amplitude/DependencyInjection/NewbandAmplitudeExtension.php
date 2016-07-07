@@ -1,6 +1,6 @@
 <?php
 
-namespace Amplitude\Symfony\DependencyInjection;
+namespace Newband\Amplitude\DependencyInjection;
 
 use Newband\Amplitude\DependencyInjection\Configuration;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
