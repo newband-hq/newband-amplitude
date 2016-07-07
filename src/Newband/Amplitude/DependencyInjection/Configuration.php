@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('amplitude');
+        $rootNode = $treeBuilder->root('newband_amplitude');
 
         $rootNode
             ->children()
