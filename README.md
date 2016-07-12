@@ -28,3 +28,12 @@ Enable the bundle in your application kernel:
             new Newband\Amplitude\NewbandAmplitudeBundle(),
         );
     }
+    
+### Configuration
+
+    // app/config/config.yml
+    
+    ... 
+    newband_amplitude:
+        apiKey: api key
+    
