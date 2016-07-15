@@ -2,6 +2,8 @@
 
 namespace Newband\Amplitude\Message;
 
+use JMS\Serializer\Annotation as Serializer;
+
 /**
  * Class Event
  * @package Newband\Amplitude\Message
@@ -10,16 +12,22 @@ namespace Newband\Amplitude\Message;
 class Event extends Message
 {
     /**
+     * @Serializer\Type("\Newband\Amplitude\Message\Identity")
+     *
      * @var Identity
      */
     protected $identity;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $eventType;
 
     /**
+     * @Serializer\Type("integer")
+     *
      * @var long
      */
     protected $time;
@@ -30,56 +38,78 @@ class Event extends Message
     protected $price;
 
     /**
+     * @Serializer\Type("integer")
+     *
      * @var int
      */
     protected $quantity;
 
     /**
+     * @Serializer\Type("double")
+     *
      * @var float
      */
     protected $revenue;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $productId;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $revenueType;
 
     /**
+     * @Serializer\Type("double")
+     *
      * @var float
      */
     protected $locationLat;
 
     /**
+     * @Serializer\Type("double")
+     *
      * @var float
      */
     protected $locationLng;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $ip;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $idfa;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $adid;
 
     /**
+     * @Serializer\Type("integer")
+     *
      * @var int
      */
     protected $sessionId;
 
     /**
+     * @Serializer\Type("array")
+     *
      * @var array
      */
     protected $eventProperties = array();

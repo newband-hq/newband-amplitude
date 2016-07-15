@@ -2,6 +2,8 @@
 
 namespace Newband\Amplitude\Message;
 
+use JMS\Serializer\Annotation as Serializer;
+
 /**
  * Class Identity
  * @package Newband\Amplitude\Message
@@ -10,96 +12,134 @@ namespace Newband\Amplitude\Message;
 class Identity extends Message
 {
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $userId;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $deviceId;
 
     /**
+     * @Serializer\Type("array")
+     *
      * @var array
      */
     protected $userProperties = array();
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $appVersion;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $platform;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $osName;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $osVersion;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $deviceBrand;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $deviceManufacture;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $deviceModel;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $deviceType;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $carrier;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $country;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $region;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $city;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $dma;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $language;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $paying;
 
     /**
+     * @Serializer\Type("string")
+     *
      * @var string
      */
     protected $startVersion;

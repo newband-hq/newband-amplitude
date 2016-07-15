@@ -1,6 +1,7 @@
 <?php
 
 namespace Newband\Amplitude\Tests;
+
 use Newband\Amplitude\Client\EventClient;
 use Newband\Amplitude\Message\Event;
 use Newband\Amplitude\Message\Identity;
@@ -21,7 +22,7 @@ class EventClientTest extends \PHPUnit_Framework_TestCase
         $event->setIdentity($identity);
         $event->setEventType('test_event');
 
-        $eventClient = new EventClient('f943f83314baab4f6fe4ad5a3f18fab9');
+        $eventClient = new EventClient($GLOBALS['apiKey']);
         $response = $eventClient->send($event);
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertEquals('success', $response->getBody(true));
