@@ -26,7 +26,7 @@ class Identity extends Message
     protected $deviceId;
 
     /**
-     * @Serializer\Type("array")
+     * @Serializer\Type("array<string, string>")
      *
      * @var array
      */
