@@ -12,7 +12,7 @@ use JMS\Serializer\Annotation as Serializer;
 class Event extends Message
 {
     /**
-     * @Serializer\Type("\Newband\Amplitude\Message\Identity")
+     * @Serializer\Type("Newband\Amplitude\Message\Identity")
      *
      * @var Identity
      */
