@@ -25,6 +25,13 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('apiKey')
                     ->isRequired()
                 ->end()
+                ->arrayNode('options')
+                    ->children()
+                        ->scalarNode('timeout')
+                            ->defaultValue(10)
+                        ->end()
+                    ->end()
+                ->end()
             ->end();
         return $treeBuilder;
     }

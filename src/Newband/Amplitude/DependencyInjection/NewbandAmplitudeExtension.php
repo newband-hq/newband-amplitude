@@ -2,8 +2,9 @@
 
 namespace Newband\Amplitude\DependencyInjection;
 
-use Newband\Amplitude\DependencyInjection\Configuration;
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
@@ -20,6 +21,28 @@ class NewbandAmplitudeExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
-        $container->setParameter('newband.amplitude.apiKey', $config['apiKey']);
+
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('clients.xml');
+
+        $this->loadClients($config, $container);
+    }
+
+    /**
+     * @param array $config
+     * @param ContainerBuilder $container
+     */
+    private function loadClients($config, ContainerBuilder $container)
+    {
+        $clients = array('event', 'identity');
+
+        foreach ($clients as $client) {
+            $id = sprintf('newband_amplitude.client.%s', $client);
+            $clientDefinition = $container->getDefinition($id);
+            $clientDefinition->replaceArgument(0, $config['apiKey']);
+            if (isset($config['options']) && !empty($config['options'])) {
+                $clientDefinition->addArgument($config['options']);
+            }
+        }
     }
 }

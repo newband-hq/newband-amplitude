@@ -18,6 +18,11 @@ abstract class AmplitudeClient implements AmplitudeClientInterface
     protected $apiKey = '';
 
     /**
+     * @var array
+     */
+    protected $config = array();
+
+    /**
      * @var string
      */
     protected $url;
@@ -30,12 +35,15 @@ abstract class AmplitudeClient implements AmplitudeClientInterface
     /**
      * AmplitudeClient constructor.
      * @param null|string $apiKey
+     * @param array $config
      */
-    public function __construct($apiKey = null)
+    public function __construct($apiKey = null, array $config)
     {
         if (null != $apiKey) {
             $this->setApiKey($apiKey);
         }
+
+        $this->config = $config;
     }
 
     /**
@@ -76,7 +84,7 @@ abstract class AmplitudeClient implements AmplitudeClientInterface
     protected function getClient()
     {
         if (null === $this->client) {
-            $this->client = new Client();
+            $this->client = new Client($this->config);
         }
 
         return $this->client;

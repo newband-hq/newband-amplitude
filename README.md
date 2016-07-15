@@ -1,9 +1,9 @@
 # Newband Amplitude Bundle
 
-### Version
+## Version
 1.0.0
 
-### Installation
+## Installation
 
 First add the dependencie to your `composer.json` file:
 
@@ -29,11 +29,28 @@ Enable the bundle in your application kernel:
         );
     }
     
-### Configuration
+## Configuration
 
     // app/config/config.yml
     
     ... 
     newband_amplitude:
         apiKey: api key
+        options:
+            timeout: 5
     
+## Usage
+
+### Event
+    $event = new Event();
+    $event->setName('..');
+    ...
+    $eventClient = $this->getContainer()->get('newband_amplitude.client.event');
+    $eventClient->send($event);
+    
+### Identity
+    $identity = new Identity();
+    $identity->setUserId('...');
+    ...
+    $identityClient = $this->getContainer()->get('newband_amplitude.client.identity');
+    $identityClient->send($identity);

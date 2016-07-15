@@ -18,11 +18,12 @@ class IdentityClient extends AmplitudeClient
 
     /**
      * EventClient constructor.
-     * @param null $apiKey
+     * @param null|string $apiKey
+     * @param array $config
      */
-    public function __construct($apiKey = null)
+    public function __construct($apiKey = null, $config = array())
     {
-        parent::__construct($apiKey);
+        parent::__construct($apiKey, $config);
         $this->setUrl(self::AMPLITUDE_IDENTITY_URL);
     }
 
