@@ -108,7 +108,7 @@ class Event extends Message
     protected $sessionId;
 
     /**
-     * @Serializer\Type("array<string, string>")
+     * @Serializer\Type("array")
      *
      * @var array
      */
