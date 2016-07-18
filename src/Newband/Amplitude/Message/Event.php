@@ -33,6 +33,8 @@ class Event extends Message
     protected $time;
 
     /**
+     * @Serializer\Type("double")
+     *
      * @var float
      */
     protected $price;
